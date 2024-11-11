@@ -21,14 +21,14 @@ A simple and elegant **Todo List App** to manage daily tasks efficiently. Built 
 1. Clone the repository:
    ```bash
     git clone https://github.com/yourusername/todo-list-app.git
-```
+   ```
 2. Navigate to the project directory:
-```bash
-   cd todo-list-app
-```
+   ```bash
+      cd todo-list-app
+   ```
 3. Install dependencies:
-```bash
-  npm install
+  ```bash
+    npm install
   ```
 4. Start the server:
     ```bash
@@ -47,15 +47,15 @@ A simple and elegant **Todo List App** to manage daily tasks efficiently. Built 
 4. app.js: Main server file.
 
 
- ## Usage##
+ ## Usage
 1. Enter a task in the input field and click Add.
 2. Use the Completed button to mark tasks as done.
 3. Use the Delete button to remove tasks.
 
-   ## Contributing##
+   ## Contributing
 Feel free to submit issues or pull requests for improvements.
 
-## License##
+## License
 This project is licensed under the MIT License.
 
 
