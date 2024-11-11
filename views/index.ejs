@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List App</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #708ed1;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #811f1f;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Form Styling */
+    form {
+      background-color: #1a1a40;
+      color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      background-color: #471baf;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #786f97;
+    }
+
+    /* Task List */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    ul li {
+      background-color: #1a1a40;
+      color: #f0f0f0;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-group form {
+      margin: 0;
+    }
+
+    .btn-group button {
+      background-color: #d7263d;
+    }
+
+    .btn-group button:hover {
+      background-color: #ff4757;
+    }
+
+    .btn-group .complete-btn {
+      background-color: #218c74;
+    }
+
+    .btn-group .complete-btn:hover {
+      background-color: #33d9b2;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Todo List</h1>
+
+  <form action="/add" method="POST">
+    <input type="text" name="task" placeholder="New Task" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <ul>
+    <% todos.forEach(todo => { %>
+      <li>
+        <span><%= todo.task %></span>
+        <div class="btn-group">
+          <% if (!todo.completed) { %>
+            <form action="/complete/<%= todo._id %>" method="POST">
+              <button type="submit" class="complete-btn">Completed</button>
+            </form>
+          <% } %>
+          <form action="/delete/<%= todo._id %>" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+
+</html>
