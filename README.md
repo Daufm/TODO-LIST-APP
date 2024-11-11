@@ -40,7 +40,7 @@ A simple and elegant **Todo List App** to manage daily tasks efficiently. Built 
      http://localhost:3000
   ```
 
- ## Project Structure##
+ ## Project Structure
 1. views/: EJS templates.
 2. public/: Static files (CSS).
 3. routes/: Application routes.
